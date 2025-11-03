@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما - تابش الکتریک</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="Css/contact.css">
+</head>
+<body>
+    <div class="top-banner">🚚 ارسال رایگان برای خرید بالای 500 هزار تومان</div>
+
+    <header>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <h1>تابش الکتریک</h1>
+                    <p>فروشگاه لوازم الکتریکی</p>
+                </div>
+            </a>
+            <div class="header-actions">
+                <a href="index.html" class="btn-back">🏠 بازگشت به خانه</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="contact-hero">
+            <div class="hero-icon">📞</div>
+            <h1>تماس با ما</h1>
+            <p>ما همیشه آماده پاسخگویی به سوالات شما هستیم</p>
+        </div>
+
+        <div class="contact-layout">
+            <div class="contact-form-section">
+                <div class="form-card">
+                    <h2>✉️ ارسال پیام</h2>
+                    <p class="form-desc">فرم زیر را تکمیل کنید تا در اسرع وقت با شما تماس بگیریم</p>
+                    
+                    <form id="contactForm" onsubmit="submitContactForm(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>نام و نام خانوادگی *</label>
+                                <input type="text" id="fullName" placeholder="نام کامل خود را وارد کنید" required>
+                            </div>
+                            <div class="form-group">
+                                <label>شماره موبایل *</label>
+                                <input type="tel" id="phone" placeholder="09123456789" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ایمیل *</label>
+                            <input type="email" id="email" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>موضوع *</label>
+                            <select id="subject" required>
+                                <option value="">انتخاب کنید</option>
+                                <option value="support">پشتیبانی فنی</option>
+                                <option value="order">سوال درباره سفارش</option>
+                                <option value="product">سوال درباره محصولات</option>
+                                <option value="complaint">شکایت و انتقاد</option>
+                                <option value="suggestion">پیشنهاد</option>
+                                <option value="cooperation">همکاری</option>
+                                <option value="other">سایر موارد</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>پیام شما *</label>
+                            <textarea id="message" rows="6" placeholder="پیام خود را اینجا بنویسید..." required></textarea>
+                            <small>حداقل 20 کاراکتر</small>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <span>📨</span>
+                            <span>ارسال پیام</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="contact-info-section">
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>آدرس فروشگاه</h3>
+                    <p>تهران، خیابان آزادی، نرسیده به میدان آزادی، پلاک 1234</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h3>شماره تماس</h3>
+                    <p><a href="tel:02112345678">021-12345678</a></p>
+                    <p><a href="tel:09123456789">0912-345-6789</a></p>
+                    <small>پاسخگویی: شنبه تا پنجشنبه، 8 صبح تا 8 شب</small>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">✉️</div>
+                    <h3>ایمیل</h3>
+                    <p><a href="mailto:info@tabesh.ir">info@tabesh.ir</a></p>
+                    <p><a href="mailto:support@tabesh.ir">support@tabesh.ir</a></p>
+                    <small>پاسخ در کمتر از 24 ساعت</small>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🕐</div>
+                    <h3>ساعات کاری</h3>
+                    <p><strong>شنبه تا چهارشنبه:</strong> 8:00 - 20:00</p>
+                    <p><strong>پنجشنبه:</strong> 8:00 - 14:00</p>
+                    <p><strong>جمعه:</strong> تعطیل</p>
+                </div>
+
+                <div class="social-card">
+                    <h3>🌐 شبکه‌های اجتماعی</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link telegram">
+                            <span>📱</span>
+                            <span>تلگرام</span>
+                        </a>
+                        <a href="#" class="social-link instagram">
+                            <span>📷</span>
+                            <span>اینستاگرام</span>
+                        </a>
+                        <a href="#" class="social-link whatsapp">
+                            <span>💬</span>
+                            <span>واتساپ</span>
+                        </a>
+                        <a href="#" class="social-link twitter">
+                            <span>🐦</span>
+                            <span>توییتر</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <h2>🗺️ موقعیت ما روی نقشه</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-icon">📍</div>
+                    <p>نقشه فروشگاه تابش الکتریک</p>
+                    <small>تهران، خیابان آزادی</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-quick">
+            <h2>❓ سوالات پرتکرار</h2>
+            <p>شاید پاسخ سوال شما اینجا باشد:</p>
+            <div class="quick-links">
+                <a href="faq.html" class="quick-link">
+                    <span>🛒</span>
+                    <span>نحوه ثبت سفارش</span>
+                </a>
+                <a href="faq.html" class="quick-link">
+                    <span>📦</span>
+                    <span>زمان ارسال</span>
+                </a>
+                <a href="faq.html" class="quick-link">
+                    <span>💳</span>
+                    <span>روش‌های پرداخت</span>
+                </a>
+                <a href="faq.html" class="quick-link">
+                    <span>↩️</span>
+                    <span>مرجوعی کالا</span>
+                </a>
+                <a href="track-order.html" class="quick-link">
+                    <span>🔍</span>
+                    <span>پیگیری سفارش</span>
+                </a>
+                <a href="faq.html" class="quick-link">
+                    <span>✓</span>
+                    <span>گارانتی محصولات</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>⚡ تابش الکتریک</h3>
+                <p>فروشگاه تخصصی لوازم الکتریکی با بهترین کیفیت و قیمت</p>
+            </div>
+            <div class="footer-section">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="index.html">صفحه اصلی</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="track-order.html">پیگیری سفارش</a></li>
+                    <li><a href="faq.html">سوالات متداول</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 1403 تابش الکتریک - تمامی حقوق محفوظ است</p>
+        </div>
+    </footer>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>

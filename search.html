@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جستجوی پیشرفته - تابش الکتریک</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="Css/search.css">
+</head>
+<body>
+    <div class="top-banner">🚚 ارسال رایگان برای خرید بالای 500 هزار تومان</div>
+
+    <header>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <h1>تابش الکتریک</h1>
+                    <p>فروشگاه لوازم الکتریکی</p>
+                </div>
+            </a>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="جستجو در میان محصولات..." autofocus>
+                <button class="search-btn" onclick="performSearch()">🔍</button>
+            </div>
+
+            <div class="header-actions">
+                <a href="profile.html" class="login-btn">👤 پروفایل</a>
+                <button class="cart-btn" onclick="window.location.href='index.html'">
+                    🛒
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-layout">
+            <!-- Filters Sidebar -->
+            <aside class="filters-sidebar">
+                <div class="filter-section">
+                    <h3 class="filter-title">📂 دسته‌بندی</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="all" checked onchange="applyFilters()">
+                            <span>همه محصولات</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="lamp" onchange="applyFilters()">
+                            <span>💡 لامپ و روشنایی</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="cable" onchange="applyFilters()">
+                            <span>🔌 سیم و کابل</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="switch" onchange="applyFilters()">
+                            <span>⚡ کلید و پریز</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="panel" onchange="applyFilters()">
+                            <span>🔧 تابلو برق</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="tools" onchange="applyFilters()">
+                            <span>🛠️ ابزار برقی</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">💰 محدوده قیمت</h3>
+                    <div class="price-range">
+                        <input type="number" id="minPrice" placeholder="از" onchange="applyFilters()">
+                        <span>-</span>
+                        <input type="number" id="maxPrice" placeholder="تا" onchange="applyFilters()">
+                    </div>
+                    <div class="price-labels">
+                        <span>0</span>
+                        <span>1,000,000</span>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">🏷️ برند</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="آیلا" onchange="applyFilters()">
+                            <span>آیلا</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="البرز" onchange="applyFilters()">
+                            <span>البرز</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="شنایدر" onchange="applyFilters()">
+                            <span>شنایدر</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="بوش" onchange="applyFilters()">
+                            <span>بوش</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">⭐ امتیاز</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="radio" name="rating" value="all" checked onchange="applyFilters()">
+                            <span>همه</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="rating" value="4" onchange="applyFilters()">
+                            <span>⭐⭐⭐⭐ و بالاتر</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="rating" value="3" onchange="applyFilters()">
+                            <span>⭐⭐⭐ و بالاتر</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3 class="filter-title">📦 موجودی</h3>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="stock" value="available" onchange="applyFilters()">
+                            <span>فقط کالاهای موجود</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn-reset" onclick="resetFilters()">🔄 پاک کردن فیلترها</button>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="search-content">
+                <div class="search-header">
+                    <div class="search-info">
+                        <h2 id="searchTitle">نتایج جستجو</h2>
+                        <p id="searchCount">0 محصول یافت شد</p>
+                    </div>
+                    
+                    <div class="search-controls">
+                        <select id="sortBy" onchange="sortProducts()">
+                            <option value="default">پیش‌فرض</option>
+                            <option value="newest">جدیدترین</option>
+                            <option value="popular">محبوب‌ترین</option>
+                            <option value="price-low">ارزان‌ترین</option>
+                            <option value="price-high">گران‌ترین</option>
+                            <option value="discount">بیشترین تخفیف</option>
+                        </select>
+
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="grid" onclick="changeView('grid')">
+                                <span>⊞</span>
+                            </button>
+                            <button class="view-btn" data-view="list" onclick="changeView('list')">
+                                <span>☰</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="productsContainer" class="products-grid"></div>
+
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <div class="empty-icon">🔍</div>
+                    <h3>محصولی یافت نشد</h3>
+                    <p>لطفاً فیلترها را تغییر دهید یا عبارت دیگری جستجو کنید</p>
+                </div>
+
+                <div class="pagination" id="pagination"></div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/toast.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

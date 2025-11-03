@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوالات متداول - تابش الکتریک</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="Css/faq.css">
+</head>
+<body>
+    <div class="top-banner">🚚 ارسال رایگان برای خرید بالای 500 هزار تومان</div>
+
+    <header>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <h1>تابش الکتریک</h1>
+                    <p>فروشگاه لوازم الکتریکی</p>
+                </div>
+            </a>
+            <div class="header-actions">
+                <a href="index.html" class="btn-back">🏠 بازگشت به خانه</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="faq-hero">
+            <div class="hero-icon">❓</div>
+            <h1>سوالات متداول</h1>
+            <p>پاسخ سوالات رایج شما در مورد خرید، ارسال و خدمات ما</p>
+            
+            <div class="search-box">
+                <input type="text" id="faqSearch" placeholder="جستجوی سوال خود را بنویسید..." onkeyup="searchFAQ()">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+
+        <div class="faq-categories">
+            <button class="category-btn active" onclick="filterCategory('all')">
+                <span class="cat-icon">📋</span>
+                <span>همه سوالات</span>
+            </button>
+            <button class="category-btn" onclick="filterCategory('order')">
+                <span class="cat-icon">🛒</span>
+                <span>سفارش و خرید</span>
+            </button>
+            <button class="category-btn" onclick="filterCategory('payment')">
+                <span class="cat-icon">💳</span>
+                <span>پرداخت</span>
+            </button>
+            <button class="category-btn" onclick="filterCategory('shipping')">
+                <span class="cat-icon">📦</span>
+                <span>ارسال</span>
+            </button>
+            <button class="category-btn" onclick="filterCategory('return')">
+                <span class="cat-icon">↩️</span>
+                <span>مرجوعی</span>
+            </button>
+            <button class="category-btn" onclick="filterCategory('account')">
+                <span class="cat-icon">👤</span>
+                <span>حساب کاربری</span>
+            </button>
+        </div>
+
+        <div class="faq-content">
+            <!-- Order Category -->
+            <div class="faq-item" data-category="order">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">🛒</span>
+                    <span class="question-text">چگونه می‌توانم سفارش ثبت کنم؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>برای ثبت سفارش مراحل زیر را دنبال کنید:</p>
+                    <ol>
+                        <li>محصول مورد نظر خود را جستجو کرده و به سبد خرید اضافه کنید</li>
+                        <li>روی آیکون سبد خرید کلیک کنید و محصولات را بررسی نمایید</li>
+                        <li>روی دکمه "ثبت سفارش و پرداخت" کلیک کنید</li>
+                        <li>اطلاعات تحویل گیرنده و آدرس را وارد کنید</li>
+                        <li>روش پرداخت را انتخاب کرده و سفارش را نهایی کنید</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="order">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">⏱️</span>
+                    <span class="question-text">آیا می‌توانم سفارش خود را لغو کنم؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>بله، تا قبل از ارسال سفارش می‌توانید آن را لغو کنید. برای لغو سفارش:</p>
+                    <ul>
+                        <li>به پروفایل کاربری خود مراجعه کنید</li>
+                        <li>از بخش "سفارش‌های من" سفارش مورد نظر را انتخاب کنید</li>
+                        <li>در صورتی که سفارش هنوز ارسال نشده، گزینه لغو سفارش نمایش داده می‌شود</li>
+                        <li>مبلغ پرداختی حداکثر تا 72 ساعت به حساب شما بازگردانده می‌شود</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="order">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">🔍</span>
+                    <span class="question-text">چگونه سفارش خود را پیگیری کنم؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>برای پیگیری سفارش دو روش وجود دارد:</p>
+                    <p><strong>روش اول:</strong> از طریق پروفایل کاربری در بخش "سفارش‌های من" وضعیت سفارش را مشاهده کنید.</p>
+                    <p><strong>روش دوم:</strong> با وارد کردن شماره سفارش و شماره موبایل در صفحه "پیگیری سفارش" وضعیت آن را بررسی کنید.</p>
+                    <p>همچنین پیامک‌های اطلاع‌رسانی در مراحل مختلف برای شما ارسال می‌شود.</p>
+                </div>
+            </div>
+
+            <!-- Payment Category -->
+            <div class="faq-item" data-category="payment">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">💳</span>
+                    <span class="question-text">چه روش‌های پرداختی را پشتیبانی می‌کنید؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>ما سه روش پرداخت را پشتیبانی می‌کنیم:</p>
+                    <ul>
+                        <li><strong>پرداخت آنلاین:</strong> از طریق درگاه امن بانکی با تمام کارت‌های عضو شتاب</li>
+                        <li><strong>کارت به کارت:</strong> انتقال وجه به حساب شرکت و ارسال رسید</li>
+                        <li><strong>پرداخت در محل:</strong> پرداخت نقدی یا کارت‌خوان هنگام دریافت کالا</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="payment">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">🔒</span>
+                    <span class="question-text">امنیت پرداخت آنلاین چگونه است؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>ما از درگاه پرداخت معتبر بانکی با رمزنگاری SSL استفاده می‌کنیم. اطلاعات کارت بانکی شما به هیچ عنوان ذخیره نمی‌شود و مستقیماً به سیستم بانکی منتقل می‌گردد.</p>
+                    <p>همچنین سایت ما دارای گواهینامه امنیتی SSL است که می‌توانید از نماد قفل در نوار آدرس مطمئن شوید.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="payment">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">🎁</span>
+                    <span class="question-text">چگونه از کد تخفیف استفاده کنم؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>در صفحه تسویه حساب، بخش "کد تخفیف دارید؟" را مشاهده می‌کنید. کد تخفیف خود را وارد کرده و روی دکمه "اعمال" کلیک کنید. مبلغ تخفیف از کل سفارش کسر می‌شود.</p>
+                    <p><strong>نکته:</strong> هر کد تخفیف فقط یک بار قابل استفاده است و برخی کدها محدودیت زمانی دارند.</p>
+                </div>
+            </div>
+
+            <!-- Shipping Category -->
+            <div class="faq-item" data-category="shipping">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">📦</span>
+                    <span class="question-text">هزینه ارسال چقدر است؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>هزینه ارسال بستگی به مبلغ خرید شما دارد:</p>
+                    <ul>
+                        <li>خرید بالای 500 هزار تومان: <strong>ارسال رایگان</strong></li>
+                        <li>خرید زیر 500 هزار تومان: 30 هزار تومان</li>
+                    </ul>
+                    <p>ارسال به تمام نقاط کشور انجام می‌شود.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="shipping">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">⏰</span>
+                    <span class="question-text">مدت زمان ارسال چقدر است؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>مدت زمان ارسال بستگی به شهر شما دارد:</p>
+                    <ul>
+                        <li><strong>تهران و کرج:</strong> 1 تا 2 روز کاری</li>
+                        <li><strong>شهرهای بزرگ:</strong> 2 تا 3 روز کاری</li>
+                        <li><strong>سایر شهرها:</strong> 3 تا 5 روز کاری</li>
+                    </ul>
+                    <p>زمان ارسال از لحظه تایید و آماده‌سازی سفارش محاسبه می‌شود.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="shipping">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">🚚</span>
+                    <span class="question-text">محصول را از چه طریقی ارسال می‌کنید؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>ارسال محصولات از طریق پست پیشتاز، تیپاکس یا پیک موتوری (در تهران) انجام می‌شود.</p>
+                    <p>کدرهگیری مرسوله از طریق پیامک برای شما ارسال می‌شود و می‌توانید از سایت پست آن را پیگیری کنید.</p>
+                </div>
+            </div>
+
+            <!-- Return Category -->
+            <div class="faq-item" data-category="return">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">↩️</span>
+                    <span class="question-text">شرایط بازگشت کالا چیست؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>شما می‌توانید تا 7 روز پس از دریافت کالا، در صورت وجود هر یک از شرایط زیر، محصول را مرجوع کنید:</p>
+                    <ul>
+                        <li>وجود ایراد فنی در محصول</li>
+                        <li>عدم مطابقت محصول با توضیحات سایت</li>
+                        <li>آسیب دیدگی در حین حمل و نقل</li>
+                        <li>دریافت محصول اشتباه</li>
+                    </ul>
+                    <p><strong>شرایط:</strong> محصول باید در بسته‌بندی اصلی و بدون استفاده باشد.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="return">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">💰</span>
+                    <span class="question-text">پول مرجوعی چقدر طول می‌کشد؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>پس از دریافت و بررسی محصول مرجوعی، مبلغ طی 3 تا 7 روز کاری به حساب شما بازگردانده می‌شود.</p>
+                    <p>در صورت پرداخت نقدی، مبلغ به حساب بانکی که در زمان ثبت مرجوعی اعلام کرده‌اید واریز می‌گردد.</p>
+                </div>
+            </div>
+
+            <!-- Account Category -->
+            <div class="faq-item" data-category="account">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">👤</span>
+                    <span class="question-text">چگونه حساب کاربری بسازم؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>برای ساخت حساب کاربری:</p>
+                    <ol>
+                        <li>روی دکمه "ورود / ثبت نام" کلیک کنید</li>
+                        <li>تب "ثبت نام" را انتخاب کنید</li>
+                        <li>اطلاعات درخواستی را وارد کنید</li>
+                        <li>روی دکمه "ثبت نام" کلیک کنید</li>
+                        <li>کد تایید ارسال شده به موبایل را وارد کنید</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="account">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="question-icon">🔑</span>
+                    <span class="question-text">رمز عبورم را فراموش کرده‌ام چه کنم؟</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>در صفحه ورود، روی "فراموشی رمز عبور؟" کلیک کنید. شماره موبایل خود را وارد کرده و کد بازیابی دریافت کنید. سپس می‌توانید رمز عبور جدید تنظیم کنید.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="noResults" class="no-results" style="display: none;">
+            <div class="no-results-icon">🔍</div>
+            <h3>نتیجه‌ای یافت نشد</h3>
+            <p>لطفاً با کلمات دیگری جستجو کنید یا با پشتیبانی تماس بگیرید</p>
+        </div>
+
+        <div class="contact-support">
+            <h3>سوال خود را پیدا نکردید؟</h3>
+            <p>تیم پشتیبانی ما آماده پاسخگویی به شماست</p>
+            <div class="support-buttons">
+                <a href="tel:02112345678" class="support-btn">
+                    <span>📞</span>
+                    <span>تماس تلفنی</span>
+                </a>
+                <a href="mailto:support@tabesh.ir" class="support-btn">
+                    <span>✉️</span>
+                    <span>ایمیل</span>
+                </a>
+                <a href="#" class="support-btn">
+                    <span>💬</span>
+                    <span>چت آنلاین</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>© 1403 تابش الکتریک - تمامی حقوق محفوظ است</p>
+        </div>
+    </footer>
+
+    <script src="js/faq.js"></script>
+</body>
+</html>

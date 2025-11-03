@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ورود به سیستم - تابش الکتریک</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Css/login.css" />
+  </head>
+  <body>
+    <div class="bg-pattern">
+      <div class="circuit circuit-1"></div>
+      <div class="circuit circuit-2"></div>
+      <div class="circuit circuit-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="logo-container" id="logoContainer">
+        <div class="logo"></div>
+        <div class="logo-text">تابش الکتریک</div>
+      </div>
+
+      <div class="form-container">
+        <div class="tabs">
+          <button class="tab active" onclick="switchTab('login')">ورود</button>
+          <button class="tab" onclick="switchTab('register')">ثبت نام</button>
+        </div>
+
+        <div id="login" class="form-content active">
+          <form>
+            <div class="input-group">
+              <label>ایمیل یا شماره موبایل</label>
+              <input type="text" placeholder="example@email.com" required />
+            </div>
+            <div class="input-group">
+              <label>رمز عبور</label>
+              <input type="password" placeholder="••••••••" required />
+            </div>
+            <div class="remember-forgot">
+              <label>
+                <input type="checkbox" />
+                مرا به خاطر بسپار
+              </label>
+              <a href="#">فراموشی رمز عبور؟</a>
+            </div>
+            <button type="submit" class="submit-btn">ورود به حساب</button>
+          </form>
+        </div>
+
+        <div id="register" class="form-content">
+          <form>
+            <div class="input-group">
+              <label>نام و نام خانوادگی</label>
+              <input
+                type="text"
+                placeholder="نام کامل خود را وارد کنید"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>ایمیل</label>
+              <input type="email" placeholder="example@email.com" required />
+            </div>
+            <div class="input-group">
+              <label>شماره موبایل</label>
+              <input type="tel" placeholder="09123456789" required />
+            </div>
+            <div class="input-group">
+              <label>رمز عبور</label>
+              <input type="password" placeholder="حداقل 8 کاراکتر" required />
+            </div>
+            <button type="submit" class="submit-btn">ثبت نام</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت موفق سفارش - تابش الکتریک</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="Css/order-success.css">
+</head>
+<body>
+    <div class="container">
+        <div class="success-card">
+            <div class="success-icon">✅</div>
+            <h1>سفارش شما با موفقیت ثبت شد!</h1>
+            <p class="success-message">از خرید شما متشکریم. سفارش شما در حال پردازش است.</p>
+            
+            <div class="order-number">
+                <span>شماره سفارش:</span>
+                <strong id="orderNumber">#10001</strong>
+            </div>
+
+            <div class="order-details">
+                <h3>📦 جزئیات سفارش</h3>
+                
+                <div class="detail-section">
+                    <h4>مشخصات تحویل گیرنده:</h4>
+                    <div id="customerInfo"></div>
+                </div>
+
+                <div class="detail-section">
+                    <h4>آدرس تحویل:</h4>
+                    <div id="shippingInfo"></div>
+                </div>
+
+                <div class="detail-section">
+                    <h4>روش پرداخت:</h4>
+                    <div id="paymentInfo"></div>
+                </div>
+
+                <div class="detail-section">
+                    <h4>محصولات سفارش:</h4>
+                    <div id="orderItems"></div>
+                </div>
+
+                <div class="pricing-summary">
+                    <div class="pricing-row">
+                        <span>جمع کل:</span>
+                        <span id="subtotal">0 تومان</span>
+                    </div>
+                    <div class="pricing-row" id="discountRow" style="display: none;">
+                        <span>تخفیف:</span>
+                        <span id="discount" style="color: #10b981;">0 تومان</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span>هزینه ارسال:</span>
+                        <span id="shipping">0 تومان</span>
+                    </div>
+                    <div class="pricing-row total">
+                        <span>مبلغ پرداختی:</span>
+                        <span id="total">0 تومان</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="next-steps">
+                <h3>📌 مراحل بعدی:</h3>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">1</span>
+                        <span>بررسی و تایید سفارش توسط تیم ما (تا 2 ساعت)</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">2</span>
+                        <span>آماده‌سازی و بسته‌بندی محصولات</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">3</span>
+                        <span>ارسال سفارش از طریق پست (1 تا 3 روز کاری)</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">4</span>
+                        <span>تحویل محصولات به آدرس شما</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-item">
+                    <span class="info-icon">📱</span>
+                    <div>
+                        <strong>پیامک تایید</strong>
+                        <p>پیامک تایید سفارش برای شما ارسال شد</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">📧</span>
+                    <div>
+                        <strong>ایمیل جزئیات</strong>
+                        <p>جزئیات کامل سفارش به ایمیل شما ارسال گردید</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <div>
+                        <strong>پشتیبانی</strong>
+                        <p>021-12345678 (تمام روزه 8 تا 22)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="index.html" class="btn-primary">🏠 بازگشت به صفحه اصلی</a>
+                <button onclick="window.print()" class="btn-secondary">🖨️ چاپ رسید</button>
+            </div>
+
+            <div class="social-share-box">
+                <p>تجربه خوب خود را با دوستان به اشتراک بگذارید:</p>
+                <div class="social-buttons">
+                    <button class="social-btn">📱 تلگرام</button>
+                    <button class="social-btn">💬 واتساپ</button>
+                    <button class="social-btn">🐦 توییتر</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/order-success.js"></script>
+</body>
+</html>

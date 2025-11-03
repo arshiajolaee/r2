@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جزئیات محصول - تابش الکتریک</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="Css/product-detail.css">
+</head>
+<body>
+    <div class="top-banner">🚚 ارسال رایگان برای خرید بالای 500 هزار تومان</div>
+
+    <header>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <h1>تابش الکتریک</h1>
+                    <p>فروشگاه لوازم الکتریکی</p>
+                </div>
+            </a>
+            <div class="header-actions">
+                <a href="profile.html" class="login-btn">👤 پروفایل</a>
+                <button class="cart-btn" onclick="window.location.href='index.html'">
+                    🛒
+                    <span class="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">🏠 خانه</a>
+        <span>›</span>
+        <a href="index.html" id="categoryLink">محصولات</a>
+        <span>›</span>
+        <span id="productNameBreadcrumb">در حال بارگذاری...</span>
+    </div>
+
+    <div class="container">
+        <div class="product-section">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <div class="badge-container">
+                        <div class="discount-badge" id="discountBadge">30% تخفیف</div>
+                        <div class="stock-badge">✓ موجود در انبار</div>
+                    </div>
+                    <div class="product-emoji" id="mainEmoji">💡</div>
+                </div>
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail active" onclick="changeImage('💡')">💡</div>
+                    <div class="thumbnail" onclick="changeImage('🔆')">🔆</div>
+                    <div class="thumbnail" onclick="changeImage('💫')">💫</div>
+                    <div class="thumbnail" onclick="changeImage('✨')">✨</div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <div class="product-brand" id="productBrand">برند: آیلا</div>
+                <h1 class="product-title" id="productTitle">لامپ LED 12 وات آفتابی</h1>
+                
+                <div class="product-rating">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <div class="rating-number" id="ratingNumber">4.5</div>
+                    <div class="reviews-count" id="reviewsCount">(234 نظر)</div>
+                </div>
+
+                <div class="product-price">
+                    <div class="price-wrapper">
+                        <div class="current-price" id="currentPrice">45,000</div>
+                        <div class="old-price" id="oldPrice">65,000</div>
+                        <div class="price-unit">تومان</div>
+                    </div>
+                    <div class="discount-info" id="discountInfo">
+                        🎉 شما 20,000 تومان در این خرید صرفه‌جویی می‌کنید!
+                    </div>
+                </div>
+
+                <div class="product-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <span>مصرف انرژی: 12 وات</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔆</span>
+                        <span>نور: آفتابی (3000K)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⏱️</span>
+                        <span>عمر مفید: 25000 ساعت</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>گارانتی: 18 ماه</span>
+                    </div>
+                </div>
+
+                <div class="quantity-selector">
+                    <div class="quantity-label">تعداد:</div>
+                    <div class="quantity-control">
+                        <button class="qty-btn" onclick="decreaseQty()">−</button>
+                        <span class="quantity-display" id="quantity">1</span>
+                        <button class="qty-btn" onclick="increaseQty()">+</button>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-add-cart" onclick="addToCartDetail()">
+                        <span>🛒</span>
+                        <span>افزودن به سبد خرید</span>
+                    </button>
+                    <button class="btn-wishlist" id="wishlistBtn" onclick="toggleWishlistDetail()">🤍</button>
+                </div>
+
+                <div class="social-share">
+                    <span class="share-label">اشتراک‌گذاری:</span>
+                    <button class="share-btn" onclick="share('telegram')">📱</button>
+                    <button class="share-btn" onclick="share('whatsapp')">💬</button>
+                    <button class="share-btn" onclick="share('twitter')">🐦</button>
+                    <button class="share-btn" onclick="share('link')">🔗</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-tabs">
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="showTab(0)">📋 توضیحات</button>
+                <button class="tab-btn" onclick="showTab(1)">📊 مشخصات فنی</button>
+                <button class="tab-btn" onclick="showTab(2)">⭐ نظرات کاربران</button>
+            </div>
+            <div class="tabs-content">
+                <div class="tab-panel active" id="tab0">
+                    <h3 style="color: #d4af37; margin-bottom: 20px;">درباره محصول</h3>
+                    <p style="color: #ccc; line-height: 2; margin-bottom: 20px;">
+                        لامپ LED 12 وات آیلا با تکنولوژی روز دنیا و کیفیت بالا، یکی از بهترین گزینه‌ها برای روشنایی منزل و محل کار شماست. این لامپ با مصرف انرژی پایین، علاوه بر صرفه‌جویی در هزینه برق، نور یکنواخت و مطبوعی را برای شما فراهم می‌کند.
+                    </p>
+                    <p style="color: #ccc; line-height: 2; margin-bottom: 20px;">
+                        با عمر مفید 25000 ساعت، این محصول برای سال‌ها شما را همراهی خواهد کرد و نیازی به تعویض مکرر نخواهید داشت. همچنین با گارانتی 18 ماهه، می‌توانید با خیال راحت خرید خود را انجام دهید.
+                    </p>
+                    <h4 style="color: #d4af37; margin: 25px 0 15px;">مزایای محصول:</h4>
+                    <div style="color: #ccc; line-height: 2;">
+                        <div style="margin-bottom: 10px;">✓ صرفه‌جویی 80% در مصرف برق نسبت به لامپ‌های معمولی</div>
+                        <div style="margin-bottom: 10px;">✓ نور بدون سوسو زدن و محافظت از چشم</div>
+                        <div style="margin-bottom: 10px;">✓ روشن شدن فوری بدون تاخیر</div>
+                        <div style="margin-bottom: 10px;">✓ مقاوم در برابر ضربه و لرزش</div>
+                        <div style="margin-bottom: 10px;">✓ عدم تولید حرارت زیاد</div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="tab1">
+                    <h3 style="color: #d4af37; margin-bottom: 20px;">مشخصات فنی</h3>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">توان مصرفی</span>
+                            <span class="spec-value">12 وات</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">ولتاژ ورودی</span>
+                            <span class="spec-value">220 ولت AC</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">دمای رنگ</span>
+                            <span class="spec-value">3000 کلوین (آفتابی)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">شار نوری</span>
+                            <span class="spec-value">1200 لومن</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">زاویه تابش</span>
+                            <span class="spec-value">270 درجه</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">نوع سرپیچ</span>
+                            <span class="spec-value">E27 (معمولی)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">عمر مفید</span>
+                            <span class="spec-value">25000 ساعت</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">ضریب توان</span>
+                            <span class="spec-value">بالای 0.9</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">شاخص بازتاب رنگ (CRI)</span>
+                            <span class="spec-value">بالای 80</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">محدوده دمای کاری</span>
+                            <span class="spec-value">-20 تا +50 درجه</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">ابعاد</span>
+                            <span class="spec-value">60 × 120 میلیمتر</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">وزن</span>
+                            <span class="spec-value">85 گرم</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">گارانتی</span>
+                            <span class="spec-value">18 ماه</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">کشور سازنده</span>
+                            <span class="spec-value">ایران</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">استاندارد</span>
+                            <span class="spec-value">CE, ROHS</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">مناسب برای</span>
+                            <span class="spec-value">منزل، اداری، تجاری</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="tab2">
+                    <div class="reviews-summary">
+                        <div class="rating-big">
+                            <div class="rating-number-big">4.5</div>
+                            <div class="stars-big">⭐⭐⭐⭐⭐</div>
+                            <div style="color: #999; font-size: 14px;">از 234 نظر</div>
+                        </div>
+                        <div class="rating-bars">
+                            <div class="rating-bar">
+                                <div class="bar-label">⭐⭐⭐⭐⭐</div>
+                                <div class="bar"><div class="bar-fill" style="width: 75%"></div></div>
+                                <div style="color: #999; font-size: 14px;">175</div>
+                            </div>
+                            <div class="rating-bar">
+                                <div class="bar-label">⭐⭐⭐⭐</div>
+                                <div class="bar"><div class="bar-fill" style="width: 15%"></div></div>
+                                <div style="color: #999; font-size: 14px;">35</div>
+                            </div>
+                            <div class="rating-bar">
+                                <div class="bar-label">⭐⭐⭐</div>
+                                <div class="bar"><div class="bar-fill" style="width: 8%"></div></div>
+                                <div style="color: #999; font-size: 14px;">19</div>
+                            </div>
+                            <div class="rating-bar">
+                                <div class="bar-label">⭐⭐</div>
+                                <div class="bar"><div class="bar-fill" style="width: 2%"></div></div>
+                                <div style="color: #999; font-size: 14px;">4</div>
+                            </div>
+                            <div class="rating-bar">
+                                <div class="bar-label">⭐</div>
+                                <div class="bar"><div class="bar-fill" style="width: 0.5%"></div></div>
+                                <div style="color: #999; font-size: 14px;">1</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #d4af37; margin-bottom: 20px;">نظرات کاربران</h3>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div>
+                                <div class="reviewer-name">علی محمدی</div>
+                                <div class="stars" style="font-size: 16px; margin-top: 5px;">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <div class="review-date">1403/08/05</div>
+                        </div>
+                        <div class="review-text">
+                            محصول فوق‌العاده‌ای است. نور خیلی خوب و یکنواختی داره. از کیفیت ساخت هم راضی هستم. قیمت با تخفیف واقعا مناسب بود. به همه توصیه میکنم.
+                        </div>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div>
+                                <div class="reviewer-name">سارا احمدی</div>
+                                <div class="stars" style="font-size: 16px; margin-top: 5px;">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <div class="review-date">1403/08/03</div>
+                        </div>
+                        <div class="review-text">
+                            از نور آفتابی این لامپ خیلی راضی هستم. برای آشپزخانه خریدم و عالی شد. مصرف برقم هم کم شده. ارسال هم سریع بود.
+                        </div>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div>
+                                <div class="reviewer-name">محمد رضایی</div>
+                                <div class="stars" style="font-size: 16px; margin-top: 5px;">⭐⭐⭐⭐</div>
+                            </div>
+                            <div class="review-date">1403/07/28</div>
+                        </div>
+                        <div class="review-text">
+                            کیفیت خوبی داره ولی نور کمی زیاده برای اتاق خواب. برای سالن عالیه. بسته‌بندی محصول حرفه‌ای بود.
+                        </div>
+                    </div>
+
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div>
+                                <div class="reviewer-name">زهرا کریمی</div>
+                                <div class="stars" style="font-size: 16px; margin-top: 5px;">⭐⭐⭐⭐⭐</div>
+                            </div>
+                            <div class="review-date">1403/07/25</div>
+                        </div>
+                        <div class="review-text">
+                            سومین باری است که از این لامپ میخرم. واقعا محصول عالیه و عمر طولانی داره. قبلی‌ها هنوز کار می‌کنند. پیشنهاد اکید میکنم.
+                        </div>
+                    </div>
+
+                    <button style="width: 100%; background: rgba(212, 175, 55, 0.1); border: 2px solid #d4af37; color: #d4af37; padding: 15px; border-radius: 12px; cursor: pointer; font-size: 16px; font-weight: 700; margin-top: 20px;" onclick="alert('نمایش همه نظرات')">
+                        نمایش همه نظرات (234)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">🔥 محصولات مشابه</h2>
+        <div class="related-products" id="relatedProducts">
+            <!-- محصولات مشابه اینجا لود می‌شوند -->
+        </div>
+    </div>
+
+    <footer style="background: #0f0f0f; border-top: 2px solid rgba(212, 175, 55, 0.2); margin-top: 80px; padding: 30px 20px; text-align: center; color: #666;">
+        <p>© 1403 تابش الکتریک - تمامی حقوق محفوظ است</p>
+    </footer>
+
+    <script src="js/product-detail.js"></script>
+</body>
+</html>                                                                         

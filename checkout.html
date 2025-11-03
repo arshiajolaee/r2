@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسویه حساب - تابش الکتریک</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="Css/checkout.css">
+</head>
+<body>
+    <div class="top-banner">🔒 پرداخت امن با رمزنگاری SSL</div>
+
+    <header>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <h1>تابش الکتریک</h1>
+                    <p>فروشگاه لوازم الکتریکی</p>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="checkout-steps">
+        <div class="step active">
+            <div class="step-number">1</div>
+            <div class="step-label">اطلاعات تحویل</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-label">روش پرداخت</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-label">تایید نهایی</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="checkout-grid">
+            <div class="checkout-form">
+                <!-- Step 1: Shipping Info -->
+                <div class="form-section active" id="step1">
+                    <h2 class="section-title">📦 اطلاعات تحویل گیرنده</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>نام و نام خانوادگی *</label>
+                            <input type="text" id="fullName" placeholder="نام کامل خود را وارد کنید" required>
+                        </div>
+                        <div class="form-group">
+                            <label>شماره موبایل *</label>
+                            <input type="tel" id="phone" placeholder="09123456789" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>ایمیل</label>
+                            <input type="email" id="email" placeholder="example@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>کد ملی</label>
+                            <input type="text" id="nationalCode" placeholder="0123456789">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>استان *</label>
+                        <select id="province" required>
+                            <option value="">انتخاب کنید</option>
+                            <option value="tehran">تهران</option>
+                            <option value="isfahan">اصفهان</option>
+                            <option value="shiraz">شیراز</option>
+                            <option value="mashhad">مشهد</option>
+                            <option value="tabriz">تبریز</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>شهر *</label>
+                            <select id="city" required>
+                                <option value="">ابتدا استان را انتخاب کنید</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>کد پستی *</label>
+                            <input type="text" id="postalCode" placeholder="1234567890" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>آدرس کامل *</label>
+                        <textarea id="address" rows="4" placeholder="آدرس دقیق محل تحویل را وارد کنید..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>توضیحات سفارش (اختیاری)</label>
+                        <textarea id="orderNotes" rows="3" placeholder="توضیحات اضافی درباره سفارش..."></textarea>
+                    </div>
+
+                    <button class="btn-next" onclick="goToStep(2)">مرحله بعد 👈</button>
+                </div>
+
+                <!-- Step 2: Payment Method -->
+                <div class="form-section" id="step2">
+                    <h2 class="section-title">💳 انتخاب روش پرداخت</h2>
+
+                    <div class="payment-methods">
+                        <div class="payment-option" onclick="selectPayment('online')">
+                            <input type="radio" name="payment" id="online" checked>
+                            <label for="online">
+                                <div class="payment-icon">💳</div>
+                                <div class="payment-info">
+                                    <div class="payment-title">پرداخت آنلاین</div>
+                                    <div class="payment-desc">پرداخت از طریق درگاه امن بانکی</div>
+                                </div>
+                                <div class="payment-check">✓</div>
+                            </label>
+                        </div>
+
+                        <div class="payment-option" onclick="selectPayment('card')">
+                            <input type="radio" name="payment" id="card">
+                            <label for="card">
+                                <div class="payment-icon">🏦</div>
+                                <div class="payment-info">
+                                    <div class="payment-title">کارت به کارت</div>
+                                    <div class="payment-desc">واریز به حساب و ارسال رسید</div>
+                                </div>
+                                <div class="payment-check">✓</div>
+                            </label>
+                        </div>
+
+                        <div class="payment-option" onclick="selectPayment('cash')">
+                            <input type="radio" name="payment" id="cash">
+                            <label for="cash">
+                                <div class="payment-icon">💵</div>
+                                <div class="payment-info">
+                                    <div class="payment-title">پرداخت در محل</div>
+                                    <div class="payment-desc">پرداخت نقدی هنگام دریافت کالا</div>
+                                </div>
+                                <div class="payment-check">✓</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="discount-code">
+                        <h3>🎁 کد تخفیف دارید؟</h3>
+                        <div class="discount-input">
+                            <input type="text" id="discountCode" placeholder="کد تخفیف را وارد کنید">
+                            <button onclick="applyDiscount()">اعمال</button>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn-back" onclick="goToStep(1)">👉 بازگشت</button>
+                        <button class="btn-next" onclick="goToStep(3)">مرحله بعد 👈</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Review Order -->
+                <div class="form-section" id="step3">
+                    <h2 class="section-title">✅ بررسی نهایی سفارش</h2>
+
+                    <div class="review-section">
+                        <h3>📦 اطلاعات تحویل گیرنده</h3>
+                        <div class="review-info" id="reviewShipping"></div>
+                    </div>
+
+                    <div class="review-section">
+                        <h3>💳 روش پرداخت</h3>
+                        <div class="review-info" id="reviewPayment"></div>
+                    </div>
+
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">
+                            <a href="faq.html" target="_blank" style="color: #d4af37; text-decoration: none;">قوانین و مقررات</a> سایت را مطالعه کرده و می‌پذیرم
+                        </label>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn-back" onclick="goToStep(2)">👉 بازگشت</button>
+                        <button class="btn-submit" onclick="submitOrder()">🛒 ثبت سفارش و پرداخت</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary Sidebar -->
+            <div class="order-summary">
+                <h3>🛒 خلاصه سفارش</h3>
+                
+                <div class="summary-items" id="summaryItems">
+                    <!-- Items will be loaded here -->
+                </div>
+
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>جمع کل محصولات:</span>
+                        <span id="subtotal">0 تومان</span>
+                    </div>
+                    <div class="summary-row discount" id="discountRow" style="display: none;">
+                        <span>تخفیف:</span>
+                        <span id="discount">0 تومان</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>هزینه ارسال:</span>
+                        <span id="shipping">30,000 تومان</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>مبلغ قابل پرداخت:</span>
+                        <span id="total">0 تومان</span>
+                    </div>
+                </div>
+
+                <div class="security-badges">
+                    <div class="badge">🔒 پرداخت امن</div>
+                    <div class="badge">✓ گارانتی اصالت</div>
+                    <div class="badge">🚚 ارسال سریع</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: #0f0f0f; border-top: 2px solid rgba(212, 175, 55, 0.2); margin-top: 80px; padding: 30px 20px; text-align: center; color: #666;">
+        <p>© 1403 تابش الکتریک - تمامی حقوق محفوظ است</p>
+    </footer>
+
+    <script src="js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پنل مدیریت - تابش الکتریک</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Css/admin.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-admin">
+          <div class="logo-icon">⚡</div>
+          <div class="logo-text">
+            <h2>تابش الکتریک</h2>
+            <p>پنل مدیریت</p>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a
+          href="#dashboard"
+          class="nav-item active"
+          onclick="showSection('dashboard')"
+        >
+          <span class="nav-icon">📊</span>
+          <span>داشبورد</span>
+        </a>
+        <a href="#products" class="nav-item" onclick="showSection('products')">
+          <span class="nav-icon">📦</span>
+          <span>مدیریت محصولات</span>
+        </a>
+        <a href="#orders" class="nav-item" onclick="showSection('orders')">
+          <span class="nav-icon">🛒</span>
+          <span>سفارشات</span>
+        </a>
+        <a
+          href="#customers"
+          class="nav-item"
+          onclick="showSection('customers')"
+        >
+          <span class="nav-icon">👥</span>
+          <span>مشتریان</span>
+        </a>
+        <a href="#settings" class="nav-item" onclick="showSection('settings')">
+          <span class="nav-icon">⚙️</span>
+          <span>تنظیمات</span>
+        </a>
+        <a href="index.html" class="nav-item logout">
+          <span class="nav-icon">🚪</span>
+          <span>بازگشت به سایت</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Top Bar -->
+      <div class="topbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <div class="topbar-right">
+          <div class="notifications">
+            <button class="notif-btn">
+              🔔
+              <span class="notif-badge">5</span>
+            </button>
+          </div>
+          <div class="admin-profile">
+            <img
+              src="https://ui-avatars.com/api/?name=Admin&background=d4af37&color=0a0a0a&bold=true"
+              alt="Admin"
+            />
+            <span>مدیر سیستم</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Section -->
+      <div id="dashboard" class="content-section active">
+        <div class="page-header">
+          <h1>📊 داشبورد</h1>
+          <p>خوش آمدید به پنل مدیریت</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue">💰</div>
+            <div class="stat-info">
+              <h3>فروش امروز</h3>
+              <p class="stat-value">12,450,000 تومان</p>
+              <span class="stat-change positive">+15% از دیروز</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green">📦</div>
+            <div class="stat-info">
+              <h3>سفارشات جدید</h3>
+              <p class="stat-value">24 سفارش</p>
+              <span class="stat-change positive">+8 سفارش</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon gold">👥</div>
+            <div class="stat-info">
+              <h3>مشتریان</h3>
+              <p class="stat-value">1,234 نفر</p>
+              <span class="stat-change positive">+45 نفر</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon purple">📈</div>
+            <div class="stat-info">
+              <h3>محصولات</h3>
+              <p class="stat-value">156 محصول</p>
+              <span class="stat-change">8 محصول موجود نیست</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <div class="chart-card">
+            <h3>📈 نمودار فروش هفته</h3>
+            <div class="simple-chart">
+              <div class="chart-bar" style="height: 60%">
+                شنبه<span>6M</span>
+              </div>
+              <div class="chart-bar" style="height: 80%">
+                یکشنبه<span>8M</span>
+              </div>
+              <div class="chart-bar" style="height: 45%">
+                دوشنبه<span>4.5M</span>
+              </div>
+              <div class="chart-bar" style="height: 90%">
+                سه‌شنبه<span>9M</span>
+              </div>
+              <div class="chart-bar" style="height: 70%">
+                چهارشنبه<span>7M</span>
+              </div>
+              <div class="chart-bar" style="height: 85%">
+                پنج‌شنبه<span>8.5M</span>
+              </div>
+              <div class="chart-bar" style="height: 95%">
+                جمعه<span>9.5M</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <h3>🔥 پرفروش‌ترین محصولات</h3>
+            <div class="top-products">
+              <div class="top-product-item">
+                <span class="rank gold">1</span>
+                <span class="product-emoji">💡</span>
+                <span class="product-name">لامپ LED 12 وات</span>
+                <span class="product-sales">234 فروش</span>
+              </div>
+              <div class="top-product-item">
+                <span class="rank silver">2</span>
+                <span class="product-emoji">🔌</span>
+                <span class="product-name">کابل افشان</span>
+                <span class="product-sales">189 فروش</span>
+              </div>
+              <div class="top-product-item">
+                <span class="rank bronze">3</span>
+                <span class="product-emoji">⚡</span>
+                <span class="product-name">کلید و پریز</span>
+                <span class="product-sales">156 فروش</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Section -->
+      <div id="products" class="content-section">
+        <div class="page-header">
+          <h1>📦 مدیریت محصولات</h1>
+          <button class="btn-primary" onclick="showAddProduct()">
+            + افزودن محصول جدید
+          </button>
+        </div>
+
+        <div class="filters-bar">
+          <input
+            type="text"
+            placeholder="🔍 جستجوی محصول..."
+            class="search-input"
+          />
+          <select class="filter-select">
+            <option>همه دسته‌بندی‌ها</option>
+            <option>لامپ و روشنایی</option>
+            <option>سیم و کابل</option>
+            <option>کلید و پریز</option>
+            <option>تابلو برق</option>
+            <option>ابزار برقی</option>
+          </select>
+        </div>
+
+        <div class="products-table">
+          <table>
+            <thead>
+              <tr>
+                <th>تصویر</th>
+                <th>نام محصول</th>
+                <th>دسته‌بندی</th>
+                <th>قیمت</th>
+                <th>موجودی</th>
+                <th>وضعیت</th>
+                <th>عملیات</th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody">
+              <!-- Products will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Orders Section -->
+      <div id="orders" class="content-section">
+        <div class="page-header">
+          <h1>🛒 مدیریت سفارشات</h1>
+          <div class="order-filters">
+            <button class="filter-btn active">همه</button>
+            <button class="filter-btn">در انتظار</button>
+            <button class="filter-btn">تایید شده</button>
+            <button class="filter-btn">ارسال شده</button>
+            <button class="filter-btn">تکمیل شده</button>
+          </div>
+        </div>
+
+        <div class="orders-grid" id="ordersGrid">
+          <!-- Orders will be loaded here -->
+        </div>
+      </div>
+
+      <!-- Customers Section -->
+      <div id="customers" class="content-section">
+        <div class="page-header">
+          <h1>👥 مدیریت مشتریان</h1>
+        </div>
+
+        <div class="customers-table">
+          <table>
+            <thead>
+              <tr>
+                <th>نام</th>
+                <th>ایمیل</th>
+                <th>تلفن</th>
+                <th>تعداد سفارش</th>
+                <th>مجموع خرید</th>
+                <th>تاریخ عضویت</th>
+              </tr>
+            </thead>
+            <tbody id="customersTableBody">
+              <!-- Customers will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Settings Section -->
+      <div id="settings" class="content-section">
+        <div class="page-header">
+          <h1>⚙️ تنظیمات</h1>
+        </div>
+
+        <div class="settings-grid">
+          <div class="settings-card">
+            <h3>🏪 تنظیمات فروشگاه</h3>
+            <div class="setting-item">
+              <label>نام فروشگاه</label>
+              <input type="text" value="تابش الکتریک" />
+            </div>
+            <div class="setting-item">
+              <label>شماره تماس</label>
+              <input type="text" value="021-12345678" />
+            </div>
+            <div class="setting-item">
+              <label>ایمیل</label>
+              <input type="email" value="info@tabesh.ir" />
+            </div>
+            <button class="btn-primary">ذخیره تغییرات</button>
+          </div>
+
+          <div class="settings-card">
+            <h3>🚚 تنظیمات ارسال</h3>
+            <div class="setting-item">
+              <label>حداقل مبلغ ارسال رایگان (تومان)</label>
+              <input type="number" value="500000" />
+            </div>
+            <div class="setting-item">
+              <label>هزینه ارسال پیش‌فرض (تومان)</label>
+              <input type="number" value="30000" />
+            </div>
+            <button class="btn-primary">ذخیره تغییرات</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalTitle">افزودن محصول جدید</h2>
+          <button class="close-modal" onclick="closeProductModal()">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>نام محصول</label>
+              <input
+                type="text"
+                id="productName"
+                placeholder="مثال: لامپ LED 12 وات"
+              />
+            </div>
+            <div class="form-group">
+              <label>برند</label>
+              <input type="text" id="productBrand" placeholder="مثال: آیلا" />
+            </div>
+            <div class="form-group">
+              <label>دسته‌بندی</label>
+              <select id="productCategory">
+                <option value="lamp">لامپ و روشنایی</option>
+                <option value="cable">سیم و کابل</option>
+                <option value="switch">کلید و پریز</option>
+                <option value="panel">تابلو برق</option>
+                <option value="tools">ابزار برقی</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>ایموجی محصول</label>
+              <input
+                type="text"
+                id="productEmoji"
+                placeholder="💡"
+                maxlength="2"
+              />
+            </div>
+            <div class="form-group">
+              <label>قیمت (تومان)</label>
+              <input type="number" id="productPrice" placeholder="45000" />
+            </div>
+            <div class="form-group">
+              <label>قیمت قبل تخفیف (تومان)</label>
+              <input type="number" id="productOldPrice" placeholder="65000" />
+            </div>
+            <div class="form-group">
+              <label>موجودی</label>
+              <input type="number" id="productStock" placeholder="100" />
+            </div>
+            <div class="form-group">
+              <label>درصد تخفیف</label>
+              <input type="number" id="productDiscount" placeholder="30" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-secondary" onclick="closeProductModal()">
+              انصراف
+            </button>
+            <button class="btn-primary" onclick="saveProduct()">
+              ذخیره محصول
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

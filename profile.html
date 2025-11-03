@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروفایل کاربری - تابش الکتریک</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="Css/profile.css">
+</head>
+<body>
+    <div class="top-banner">🚚 ارسال رایگان برای خرید بالای 500 هزار تومان</div>
+
+    <header>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <h1>تابش الکتریک</h1>
+                    <p>فروشگاه لوازم الکتریکی</p>
+                </div>
+            </a>
+            <div class="header-actions">
+                <button class="cart-btn" onclick="window.location.href='index.html'">
+                    🛒
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="profile-layout">
+            <!-- Sidebar Menu -->
+            <div class="profile-sidebar">
+                <div class="user-welcome">
+                    <div class="user-avatar">👤</div>
+                    <h3 id="userName">علی احمدی</h3>
+                    <p id="userPhone">09123456789</p>
+                </div>
+
+                <nav class="profile-menu">
+                    <a href="#dashboard" class="menu-item active" onclick="showTab('dashboard')">
+                        <span class="menu-icon">📊</span>
+                        <span>داشبورد</span>
+                    </a>
+                    <a href="#orders" class="menu-item" onclick="showTab('orders')">
+                        <span class="menu-icon">📦</span>
+                        <span>سفارش‌های من</span>
+                    </a>
+                    <a href="#addresses" class="menu-item" onclick="showTab('addresses')">
+                        <span class="menu-icon">📍</span>
+                        <span>آدرس‌های من</span>
+                    </a>
+                    <a href="#wishlist" class="menu-item" onclick="showTab('wishlist')">
+                        <span class="menu-icon">❤️</span>
+                        <span>علاقه‌مندی‌ها</span>
+                    </a>
+                    <a href="#info" class="menu-item" onclick="showTab('info')">
+                        <span class="menu-icon">👤</span>
+                        <span>اطلاعات حساب</span>
+                    </a>
+                    <a href="#password" class="menu-item" onclick="showTab('password')">
+                        <span class="menu-icon">🔒</span>
+                        <span>تغییر رمز عبور</span>
+                    </a>
+                    <a href="index.html" class="menu-item logout">
+                        <span class="menu-icon">🚪</span>
+                        <span>خروج از حساب</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="profile-content">
+                <!-- Dashboard Tab -->
+                <div id="dashboard" class="tab-content active">
+                    <h2 class="page-title">📊 داشبورد</h2>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">📦</div>
+                            <div class="stat-info">
+                                <h3>سفارش‌ها</h3>
+                                <p class="stat-value" id="totalOrders">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">💰</div>
+                            <div class="stat-info">
+                                <h3>مجموع خرید</h3>
+                                <p class="stat-value" id="totalSpent">0 تومان</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">❤️</div>
+                            <div class="stat-info">
+                                <h3>علاقه‌مندی‌ها</h3>
+                                <p class="stat-value" id="wishlistCount">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎁</div>
+                            <div class="stat-info">
+                                <h3>امتیاز شما</h3>
+                                <p class="stat-value">1250</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recent-section">
+                        <h3>🕐 آخرین سفارش‌ها</h3>
+                        <div id="recentOrders"></div>
+                    </div>
+                </div>
+
+                <!-- Orders Tab -->
+                <div id="orders" class="tab-content">
+                    <h2 class="page-title">📦 سفارش‌های من</h2>
+                    
+                    <div class="orders-filter">
+                        <button class="filter-btn active" onclick="filterOrders('all')">همه</button>
+                        <button class="filter-btn" onclick="filterOrders('pending')">در انتظار</button>
+                        <button class="filter-btn" onclick="filterOrders('processing')">در حال پردازش</button>
+                        <button class="filter-btn" onclick="filterOrders('shipped')">ارسال شده</button>
+                        <button class="filter-btn" onclick="filterOrders('delivered')">تحویل داده شده</button>
+                    </div>
+
+                    <div id="ordersList"></div>
+                </div>
+
+                <!-- Addresses Tab -->
+                <div id="addresses" class="tab-content">
+                    <div class="section-header">
+                        <h2 class="page-title">📍 آدرس‌های من</h2>
+                        <button class="btn-primary" onclick="showAddAddress()">+ افزودن آدرس جدید</button>
+                    </div>
+                    
+                    <div id="addressesList" class="addresses-grid"></div>
+                </div>
+
+                <!-- Wishlist Tab -->
+                <div id="wishlist" class="tab-content">
+                    <h2 class="page-title">❤️ علاقه‌مندی‌ها</h2>
+                    <div id="wishlistProducts" class="products-grid"></div>
+                </div>
+
+                <!-- Info Tab -->
+                <div id="info" class="tab-content">
+                    <h2 class="page-title">👤 اطلاعات حساب کاربری</h2>
+                    
+                    <div class="info-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>نام و نام خانوادگی</label>
+                                <input type="text" id="editName" placeholder="نام کامل">
+                            </div>
+                            <div class="form-group">
+                                <label>شماره موبایل</label>
+                                <input type="tel" id="editPhone" placeholder="09123456789" disabled>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>ایمیل</label>
+                                <input type="email" id="editEmail" placeholder="example@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label>کد ملی</label>
+                                <input type="text" id="editNationalCode" placeholder="0123456789">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>تاریخ تولد</label>
+                            <input type="text" id="editBirthday" placeholder="1370/01/01">
+                        </div>
+                        <button class="btn-primary" onclick="saveUserInfo()">💾 ذخیره تغییرات</button>
+                    </div>
+                </div>
+
+                <!-- Password Tab -->
+                <div id="password" class="tab-content">
+                    <h2 class="page-title">🔒 تغییر رمز عبور</h2>
+                    
+                    <div class="password-form">
+                        <div class="form-group">
+                            <label>رمز عبور فعلی</label>
+                            <input type="password" id="currentPassword" placeholder="••••••••">
+                        </div>
+                        <div class="form-group">
+                            <label>رمز عبور جدید</label>
+                            <input type="password" id="newPassword" placeholder="حداقل 8 کاراکتر">
+                            <div class="password-strength" id="passwordStrength"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>تکرار رمز عبور جدید</label>
+                            <input type="password" id="confirmPassword" placeholder="••••••••">
+                        </div>
+                        <button class="btn-primary" onclick="changePassword()">🔐 تغییر رمز عبور</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پیگیری سفارش - تابش الکتریک</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="Css/track-order.css">
+</head>
+<body>
+    <div class="top-banner">🚚 ارسال رایگان برای خرید بالای 500 هزار تومان</div>
+
+    <header>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <h1>تابش الکتریک</h1>
+                    <p>فروشگاه لوازم الکتریکی</p>
+                </div>
+            </a>
+            <div class="header-actions">
+                <a href="index.html" class="btn-back">🏠 بازگشت به خانه</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="track-hero">
+            <div class="hero-icon">📦</div>
+            <h1>پیگیری سفارش</h1>
+            <p>وضعیت سفارش خود را با وارد کردن شماره سفارش پیگیری کنید</p>
+        </div>
+
+        <div class="track-form-card">
+            <h2>🔍 جستجوی سفارش</h2>
+            <form id="trackForm" onsubmit="trackOrder(event)">
+                <div class="form-group">
+                    <label>شماره سفارش *</label>
+                    <input type="text" id="orderNumber" placeholder="مثال: #10001" required>
+                    <small>شماره سفارش را از ایمیل یا پیامک تایید دریافت کرده‌اید</small>
+                </div>
+                <div class="form-group">
+                    <label>شماره موبایل *</label>
+                    <input type="tel" id="phoneNumber" placeholder="09123456789" required>
+                    <small>شماره موبایلی که هنگام ثبت سفارش وارد کرده‌اید</small>
+                </div>
+                <button type="submit" class="btn-track">
+                    <span>🔎</span>
+                    <span>پیگیری سفارش</span>
+                </button>
+            </form>
+        </div>
+
+        <div class="order-result" id="orderResult" style="display: none;">
+            <div class="result-header">
+                <h2>📋 جزئیات سفارش <span id="resultOrderNumber">#10001</span></h2>
+                <span class="order-status-badge" id="orderStatusBadge">✅ تحویل داده شده</span>
+            </div>
+
+            <div class="tracking-timeline">
+                <div class="timeline-item completed">
+                    <div class="timeline-icon">✓</div>
+                    <div class="timeline-content">
+                        <h3>ثبت سفارش</h3>
+                        <p>سفارش شما با موفقیت ثبت شد</p>
+                        <span class="timeline-date" id="date1">1403/08/10 - 14:30</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item completed">
+                    <div class="timeline-icon">✓</div>
+                    <div class="timeline-content">
+                        <h3>تایید سفارش</h3>
+                        <p>سفارش توسط فروشگاه تایید شد</p>
+                        <span class="timeline-date" id="date2">1403/08/10 - 16:15</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item completed">
+                    <div class="timeline-icon">✓</div>
+                    <div class="timeline-content">
+                        <h3>آماده‌سازی و بسته‌بندی</h3>
+                        <p>محصولات شما بسته‌بندی شدند</p>
+                        <span class="timeline-date" id="date3">1403/08/11 - 10:00</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item completed">
+                    <div class="timeline-icon">✓</div>
+                    <div class="timeline-content">
+                        <h3>تحویل به پست</h3>
+                        <p>مرسوله به پست تحویل داده شد</p>
+                        <span class="timeline-date" id="date4">1403/08/11 - 18:00</span>
+                        <div class="tracking-code">
+                            <strong>کد رهگیری پستی:</strong> 
+                            <span id="postCode">1234567890</span>
+                            <button onclick="copyTrackingCode()" class="btn-copy">📋 کپی</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item active">
+                    <div class="timeline-icon">🚚</div>
+                    <div class="timeline-content">
+                        <h3>در حال ارسال</h3>
+                        <p>مرسوله در مسیر ارسال است</p>
+                        <span class="timeline-date">در حال انجام...</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">📍</div>
+                    <div class="timeline-content">
+                        <h3>تحویل به گیرنده</h3>
+                        <p>تحویل نهایی به آدرس مقصد</p>
+                        <span class="timeline-date">به زودی...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-details-card">
+                <h3>📦 محصولات سفارش</h3>
+                <div id="orderItems"></div>
+            </div>
+
+            <div class="order-info-grid">
+                <div class="info-card">
+                    <h4>👤 اطلاعات گیرنده</h4>
+                    <div id="customerInfo"></div>
+                </div>
+                <div class="info-card">
+                    <h4>📍 آدرس تحویل</h4>
+                    <div id="shippingAddress"></div>
+                </div>
+                <div class="info-card">
+                    <h4>💰 اطلاعات پرداخت</h4>
+                    <div id="paymentInfo"></div>
+                </div>
+            </div>
+
+            <div class="support-box">
+                <h3>💬 نیاز به کمک دارید؟</h3>
+                <p>تیم پشتیبانی ما آماده پاسخگویی به سوالات شماست</p>
+                <div class="support-buttons">
+                    <a href="contact.html" class="support-btn">📞 تماس با پشتیبانی</a>
+                    <a href="faq.html" class="support-btn">❓ سوالات متداول</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-result" id="noResult" style="display: none;">
+            <div class="no-result-icon">❌</div>
+            <h3>سفارشی یافت نشد!</h3>
+            <p>لطفاً شماره سفارش و شماره موبایل را بررسی کنید و دوباره امتحان کنید</p>
+            <button onclick="resetForm()" class="btn-try-again">🔄 جستجوی مجدد</button>
+        </div>
+
+        <div class="help-section">
+            <h3>📌 راهنمای پیگیری سفارش</h3>
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon">1️⃣</div>
+                    <h4>شماره سفارش را وارد کنید</h4>
+                    <p>شماره سفارش از طریق پیامک و ایمیل برای شما ارسال شده است</p>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon">2️⃣</div>
+                    <h4>شماره موبایل را وارد کنید</h4>
+                    <p>شماره موبایلی که هنگام ثبت سفارش استفاده کردید</p>
+                </div>
+                <div class="help-card">
+                    <div class="help-icon">3️⃣</div>
+                    <h4>وضعیت سفارش را مشاهده کنید</h4>
+                    <p>تمام مراحل پردازش و ارسال سفارش را دنبال کنید</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>⚡ تابش الکتریک</h3>
+                <p>فروشگاه تخصصی لوازم الکتریکی</p>
+            </div>
+            <div class="footer-section">
+                <h3>دسترسی سریع</h3>
+                <ul>
+                    <li><a href="index.html">صفحه اصلی</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="contact.html">تماس با ما</a></li>
+                    <li><a href="faq.html">سوالات متداول</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 1403 تابش الکتریک - تمامی حقوق محفوظ است</p>
+        </div>
+    </footer>
+
+    <script src="js/track-order.js"></script>
+</body>
+</html>

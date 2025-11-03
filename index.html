@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تابش الکتریک - فروشگاه لوازم الکتریکی</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Css/style.css" />
+  </head>
+  <body>
+    <div class="top-banner">🚚 ارسال رایگان برای خرید بالای 500 هزار تومان</div>
+
+    <header>
+      <div class="header-main">
+        <div class="logo">
+          <div class="logo-icon">⚡</div>
+          <div>
+            <h1>تابش الکتریک</h1>
+            <p>فروشگاه لوازم الکتریکی</p>
+          </div>
+        </div>
+
+        <div class="search-bar">
+          <input type="text" placeholder="جستجو در میان هزاران محصول..." id="searchInput" />
+        </div>
+
+        <div class="header-actions">
+          <a href="login.html" class="login-btn"> 👤 ورود / ثبت نام </a>
+          <button class="cart-btn" onclick="toggleCart()">
+            🛒
+            <span class="cart-badge" id="cartBadge">0</span>
+          </button>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav-container" id="navContainer">
+          <button class="nav-btn active" onclick="filterCategory('all')">
+            📦 همه محصولات
+          </button>
+          <button class="nav-btn" onclick="filterCategory('lamp')">
+            💡 لامپ و روشنایی
+          </button>
+          <button class="nav-btn" onclick="filterCategory('cable')">
+            🔌 سیم و کابل
+          </button>
+          <button class="nav-btn" onclick="filterCategory('switch')">
+            ⚡ کلید و پریز
+          </button>
+          <button class="nav-btn" onclick="filterCategory('panel')">
+            🔧 تابلو برق
+          </button>
+          <button class="nav-btn" onclick="filterCategory('tools')">
+            🛠️ ابزار برقی
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="banner-slider">
+        <div class="banner-slide banner-1 active">
+          <div class="banner-content">
+            <h2>تخفیف ویژه لامپ های LED</h2>
+            <p>تا 40% تخفیف</p>
+            <button class="banner-btn" onclick="filterCategory('lamp')">خرید کنید</button>
+          </div>
+        </div>
+        <div class="banner-slide banner-2">
+          <div class="banner-content">
+            <h2>کابل و سیم استاندارد</h2>
+            <p>با بهترین کیفیت</p>
+            <button class="banner-btn" onclick="filterCategory('cable')">خرید کنید</button>
+          </div>
+        </div>
+        <div class="banner-slide banner-3">
+          <div class="banner-content">
+            <h2>ابزار برقی حرفه ای</h2>
+            <p>ارسال رایگان</p>
+            <button class="banner-btn" onclick="filterCategory('tools')">خرید کنید</button>
+          </div>
+        </div>
+        <div class="banner-dots">
+          <span class="dot active" onclick="changeBanner(0)"></span>
+          <span class="dot" onclick="changeBanner(1)"></span>
+          <span class="dot" onclick="changeBanner(2)"></span>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">🚚</div>
+          <h3>ارسال سریع</h3>
+          <p>ارسال به سراسر کشور</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3>ضمانت اصالت</h3>
+          <p>محصولات اصل و استاندارد</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📞</div>
+          <h3>پشتیبانی 24/7</h3>
+          <p>همیشه در کنار شما</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>قیمت مناسب</h3>
+          <p>بهترین قیمت بازار</p>
+        </div>
+      </div>
+
+      <h2 class="section-title">🔍 دسته‌بندی محصولات</h2>
+      <div class="categories">
+        <div class="category-card" onclick="filterCategory('lamp')">
+          <div class="category-icon">💡</div>
+          <p>لامپ و روشنایی</p>
+        </div>
+        <div class="category-card" onclick="filterCategory('cable')">
+          <div class="category-icon">🔌</div>
+          <p>سیم و کابل</p>
+        </div>
+        <div class="category-card" onclick="filterCategory('switch')">
+          <div class="category-icon">⚡</div>
+          <p>کلید و پریز</p>
+        </div>
+        <div class="category-card" onclick="filterCategory('panel')">
+          <div class="category-icon">🔧</div>
+          <p>تابلو برق</p>
+        </div>
+        <div class="category-card" onclick="filterCategory('tools')">
+          <div class="category-icon">🛠️</div>
+          <p>ابزار برقی</p>
+        </div>
+      </div>
+
+      <h2 class="section-title">⭐ پیشنهادات ویژه</h2>
+      <div class="products" id="productsContainer"></div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <div class="cart-title">🛒 سبد خرید</div>
+        <button class="close-cart" onclick="toggleCart()">✕</button>
+      </div>
+      <div class="cart-content" id="cartContent">
+        <div class="cart-empty">
+          <div class="cart-empty-icon">🛒</div>
+          <p>سبد خرید شما خالی است</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>⚡ تابش الکتریک</h3>
+          <p>فروشگاه تخصصی لوازم الکتریکی با بهترین کیفیت و قیمت</p>
+        </div>
+        <div class="footer-section">
+          <h3>دسترسی سریع</h3>
+          <ul>
+            <li><a href="about.html" style="color: #999; text-decoration: none;">درباره ما</a></li>
+            <li><a href="contact.html" style="color: #999; text-decoration: none;">تماس با ما</a></li>
+            <li><a href="faq.html" style="color: #999; text-decoration: none;">قوانین و مقررات</a></li>
+            <li><a href="faq.html" style="color: #999; text-decoration: none;">حریم خصوصی</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>خدمات مشتریان</h3>
+          <ul>
+            <li><a href="track-order.html" style="color: #999; text-decoration: none;">پیگیری سفارش</a></li>
+            <li><a href="faq.html" style="color: #999; text-decoration: none;">شیوه های پرداخت</a></li>
+            <li><a href="faq.html" style="color: #999; text-decoration: none;">رویه بازگشت کالا</a></li>
+            <li><a href="faq.html" style="color: #999; text-decoration: none;">سوالات متداول</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>تماس با ما</h3>
+          <p>📞 <a href="tel:02112345678" style="color: #999; text-decoration: none;">021-12345678</a></p>
+          <p>✉️ <a href="mailto:info@tabesh.ir" style="color: #999; text-decoration: none;">info@tabesh.ir</a></p>
+          <p>📍 تهران، خیابان آزادی</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 1403 تابش الکتریک - تمامی حقوق محفوظ است</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      // جستجوی محصولات
+      document.getElementById('searchInput')?.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          const query = this.value.trim();
+          if (query) {
+            window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
