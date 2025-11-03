@@ -71,14 +71,37 @@
 
                 <div class="filter-section">
                     <h3 class="filter-title">💰 محدوده قیمت</h3>
+                    
                     <div class="price-range">
-                        <input type="number" id="minPrice" placeholder="از" onchange="applyFilters()">
-                        <span>-</span>
-                        <input type="number" id="maxPrice" placeholder="تا" onchange="applyFilters()">
+                        <input 
+                            type="number" 
+                            id="minPrice" 
+                            placeholder="حداقل"
+                            min="0"
+                            step="1000"
+                        >
+                        <span>تا</span>
+                        <input 
+                            type="number" 
+                            id="maxPrice" 
+                            placeholder="حداکثر"
+                            min="0"
+                            step="1000"
+                        >
                     </div>
+                    
                     <div class="price-labels">
-                        <span>0</span>
-                        <span>1,000,000</span>
+                        <span>0 تومان</span>
+                        <span>1,000,000+ تومان</span>
+                    </div>
+                    
+                    <div class="price-filter-actions">
+                        <button class="btn-apply-price" onclick="applyFilters()">
+                            ✓ اعمال
+                        </button>
+                        <button class="btn-clear-price" onclick="clearPriceFilter()">
+                            × پاک
+                        </button>
                     </div>
                 </div>
 
@@ -101,6 +124,18 @@
                             <input type="checkbox" name="brand" value="بوش" onchange="applyFilters()">
                             <span>بوش</span>
                         </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="پارس شعاع" onchange="applyFilters()">
+                            <span>پارس شعاع</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="الکو پویا" onchange="applyFilters()">
+                            <span>الکو پویا</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="الیکس" onchange="applyFilters()">
+                            <span>الیکس</span>
+                        </label>
                     </div>
                 </div>
 
@@ -112,12 +147,16 @@
                             <span>همه</span>
                         </label>
                         <label class="filter-option">
+                            <input type="radio" name="rating" value="4.5" onchange="applyFilters()">
+                            <span>⭐⭐⭐⭐⭐ (4.5+)</span>
+                        </label>
+                        <label class="filter-option">
                             <input type="radio" name="rating" value="4" onchange="applyFilters()">
-                            <span>⭐⭐⭐⭐ و بالاتر</span>
+                            <span>⭐⭐⭐⭐ (4+)</span>
                         </label>
                         <label class="filter-option">
                             <input type="radio" name="rating" value="3" onchange="applyFilters()">
-                            <span>⭐⭐⭐ و بالاتر</span>
+                            <span>⭐⭐⭐ (3+)</span>
                         </label>
                     </div>
                 </div>
@@ -132,7 +171,9 @@
                     </div>
                 </div>
 
-                <button class="btn-reset" onclick="resetFilters()">🔄 پاک کردن فیلترها</button>
+                <button class="btn-reset" onclick="resetFilters()">
+                    🔄 پاک کردن فیلترها
+                </button>
             </aside>
 
             <!-- Main Content -->
@@ -176,6 +217,10 @@
             </main>
         </div>
     </div>
+
+    <footer style="background: #0f0f0f; border-top: 2px solid rgba(212, 175, 55, 0.2); margin-top: 80px; padding: 30px 20px; text-align: center; color: #666;">
+        <p>© 1403 تابش الکتریک - تمامی حقوق محفوظ است</p>
+    </footer>
 
     <script src="js/toast.js"></script>
     <script src="js/search.js"></script>
